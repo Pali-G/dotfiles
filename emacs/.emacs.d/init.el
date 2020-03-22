@@ -22,12 +22,16 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-agenda-files
+   (quote
+    ("~/Dokumente/Orga/kalender.org" "~/Dokumente/Orga/fairtsg.org")))
  '(package-selected-packages
    (quote
-    (base16-theme which-key use-package treemacs popup-kill-ring nyan-mode magit expand-region counsel company auctex))))
+    (ess ess-R-data-view eldoc-cmake cyberpunk-theme base16-theme which-key use-package treemacs popup-kill-ring nyan-mode magit expand-region counsel company auctex))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'upcase-region 'disabled nil)

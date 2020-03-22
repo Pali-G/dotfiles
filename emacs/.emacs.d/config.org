@@ -36,9 +36,9 @@
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
-  (global-display-line-numbers-mode 1)
+  (setq line-number-mode 1)
   (add-hook 'doc-view-mode-hook (lambda ()
-				  (display-line-numbers-mode -1)))
+                                  (setq line-number-mode -1)))
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
@@ -46,15 +46,20 @@
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
-  (use-package base16-theme
+  (use-package cyberpunk-theme
     :config
-    (load-theme 'base16-ia-light t))
+    (load-theme 'cyberpunk t))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+  (global-display-line-numbers-mode)
 #+END_SRC
 
 * Editing
 
 #+BEGIN_SRC emacs-lisp
   (use-package ace-window
+
     :bind
     ("M-n" . ace-window))
 #+END_SRC
@@ -133,9 +138,23 @@
 		(org-indent-mode 1)))
 #+END_SRC
 
+#+BEGIN_SRC emacs-lisp
+  (setq org-agenda-files (quote
+                          ("~/Dokumente/Orga/kalender.org")))
+#+END_SRC
+
 ** Latex
 
 #+BEGIN_SRC emacs-lisp
   (use-package tex
     :ensure auctex)
+#+END_SRC
+** R
+#+BEGIN_SRC emacs-lisp
+   (use-package ess
+  :ensure ess)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+   (setq ess-use-auto-complete t)
 #+END_SRC
